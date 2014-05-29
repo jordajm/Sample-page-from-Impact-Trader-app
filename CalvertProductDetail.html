@@ -1,0 +1,1259 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Dwight - Impact Trader</title>
+<!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- Glyphicons --> 
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="justified-nav.css" rel="stylesheet">
+           <!-- Custom styles for this template -->
+    <link href="css/sticky-footer.css" rel="stylesheet" />
+      <!-- JQUERY -->
+    <script src="js/jquery.js"></script>
+  <!-- JQUERY END-->
+   <!-- JS-->
+    <script src="js/bootstrap.js"></script>
+  <!-- JS END-->
+   
+  <!-- COLLAPSIBLE DIV SCRIPT -->
+        
+      <script type="text/javascript">
+          jQuery(document).ready(function () {
+              jQuery(".eggs").hide();
+              //toggle the componenet with class msg_body
+              jQuery(".scrambled").click(function () {
+                  jQuery(this).next(".eggs").slideToggle(500);
+              });
+          });
+       </script>
+
+    <style type="text/css">
+        td {
+            width: 20%;
+        }
+
+        th {
+            width: 20%;
+            text-align: left;
+        }
+
+        .table {
+            text-align: left;
+            margin-bottom: 0px;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        .navbar {
+            position: static;
+        }
+    </style>
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+
+    <script src="/Scripts/jquery-1.9.1.js"></script>
+<script src="/Scripts/bootstrap.js"></script>
+
+    <script src="/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="/Scripts/jquery.validate.js"></script>
+<script src="/Scripts/jquery.validate.unobtrusive.js"></script>
+
+    <script src="/Scripts/jquery-ui-1.8.24.js"></script>
+
+    <script src="/Scripts/common.js"></script>
+<script src="/Scripts/bootstrap-maxlength.js"></script>
+<script src="/Scripts/parallax.js"></script>
+<script src="/Scripts/single-page-scroll.js"></script>
+<script src="/Scripts/highstock.js"></script>
+<script src="/Scripts/summernote.js"></script>
+
+    
+</head>
+<body>
+    <!-- LOGO -->
+    <div class="row" style="margin-top:15px">
+        <div class="container">
+            <div class="col-xs-12 col-sm-5 col-md-5">
+                <img style="max-width:300px" class="img-responsive" src="img/impact_trader_logo.png" />
+                <h4 style="margin-top:0px;margin-bottom:15px">Impact Investing for Financial Advisors</h4>
+            </div>
+            <div class="col-md-7 col-sm-7 col-xs-12">
+                <div class="row">
+                    <!-- todo: Search box functionality-->
+                    <div class="input-group pull-right col-xs-12 col-sm-8 col-md-6" style="visibility:hidden;">
+                        <input type="text" class="form-control" placeholder="Search . . . ">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-search"></span> <span class="caret"></span></button>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="#">Search Offerings</a></li>
+                                <li><a href="#">Search Clients</a></li>
+                                <li><a href="#">Search Transactions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <a href="/Home/Offerings" class="btn btn-success pull-right viewofferingsbutton" style="margin-right: 5px; margin-top: 20px; display: none;">View Impact Offerings &nbsp <span class="glyphicon glyphicon-chevron-right"></span></a>
+                        <!-- todo: Confirm Order button
+                        <a href="/Home/ConfirmOrder" hidden="hidden" class="btn btn-success pull-right confirmorderbuttontodo" style="margin-right:5px;margin-top:20px">Complete Order &nbsp <span class="glyphicon glyphicon-chevron-right"></span></a>
+                            -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- LOGO END -->
+
+    <div class="container">
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li id="homelink"><a href="/">Home</a></li>
+
+                                            <li id="offeringslink"><a href="/Home/Offerings">Offerings</a></li>
+                        <li id="clientslink"><a href="/Home/Clients">Clients</a></li>
+                        <li id="transactionslink">
+                            <a href="/Home/Transactions">
+                            Transactions
+                            </a>
+                        </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/Account/Manage" style="color:#41a9d6;" title="Manage">Logged in as Bill</a></li>
+    <li><a href="/Account/Manage" title="Manage"> Manage Account</a></li>
+    <li><a href="javascript:document.getElementById('logoutForm').submit()">Logout</a></li>
+<form action="/Account/LogOff" id="logoutForm" method="post" style="float:left;"><input name="__RequestVerificationToken" type="hidden" value="E1W3FAP1Ka9u4_1iaX9mwiMatbNcVj__cOrRfk1xSt7FG1Ml5J_XJVu-s2kUS5IRo0QX1fHinLfuQeQwWhiMK6VUFfKZA5b8yebHf0ISaRcNdfn_ekcnT7uJGL_gq0IbGJA-bnCnMoy0IAEz5e7dCw2" /></form>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container-full">
+        
+
+
+<script type="text/javascript">
+    document.getElementById('clientslink').className += ' active';
+
+    jQuery(document).ready(function () {
+            $("#impactStatementPresent").attr("hidden", false);
+    });
+</script>
+
+<style>
+    td {
+        width: 12.5%;
+    }
+
+    th {
+        width: 12.5%;
+    }
+
+    .table {
+        text-align: left;
+        margin-bottom: 0px;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    .navbar {
+        position: static;
+    }
+
+    .jumbotron {
+        padding-top: 0px;
+        padding-bottom: 25px;
+        padding-left: 0px;
+    }
+</style>
+
+<div class="row">
+    <div class="container">
+        <div class="col-md-9 col-sm-6 col-xs-12" style="margin-bottom: 20px">
+            <h2><span class="glyphicon glyphicon-user"></span>&nbsp Client Profile</h2>
+        </div>
+       
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <a href="../Clients" class="btn btn-success pull-right" style="margin-top: 10px"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp Back to Client List</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="margin-bottom: 20px">
+
+                <img src="img/client1007.png" alt="" class="img-rounded img-responsive" />
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 scrambled">
+                <blockquote>
+                    <h3>Dwight Schrute</h3>
+                    <small><cite title="Source Title">Rodham, MA &nbsp <span class="glyphicon glyphicon-map-marker"></span></cite></small>
+                </blockquote>
+                <span class="glyphicon glyphicon-envelope"></span>&nbsp <a href="mailto:client+dwight@impacttrader.com"><a href="mailto:client+dwight@impacttrader.com">client+dwight@impacttrader.com</a></a>
+                <br />
+                <span class="glyphicon glyphicon-phone-alt"></span>&nbsp 6568834343
+                <br />
+                <span class="glyphicon glyphicon-thumbs-up"></span>&nbsp <strong>Interests:</strong> Microfinance, Water
+                <br />
+                <span class="glyphicon glyphicon-globe"></span>&nbsp <strong>Geography:</strong> Africa, US
+                <br />
+            </div>
+        </div>
+        <div class="col-xs-6" id="geoChart_div" style="width: 500px; height: 200px"></div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="container">
+    <div class="col-xs-12 panel panel-default" style="margin-top:20px;padding:0px">
+        <div class="panel-body" style="padding:0px">
+                <div class="col-xs-4">
+                    <h4 style="font-size:23px;margin-left:0px"><span class="glyphicon glyphicon-stats"></span><strong>&nbsp <strong>Quarterly Impact Statement:</strong></strong></h4>
+                </div>
+                <div class="col-xs-3">
+                    <p style="margin-top:17px;text-align:right">Email monthly statements to this client?</p>
+                </div>
+                <div class="col-xs-2">
+                    <div style="margin-top:7px" class="btn-group btn-toggle"> 
+                        <button class="btn btn-default">Yes</button>
+                        <button class="btn btn-primary active">No</button>
+                    </div>
+                </div>
+                <div class="col-xs-2">
+                    <a class="btn btn-primary btn-block" style="margin-top:7px" data-toggle="modal" href="#myModalClient1" target="_blank"><span class="glyphicon glyphicon-ok"></span>&nbsp Preview Statement</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+              
+<!-- TOGGLE BUTTON SCRIPT -->
+<script type="text/javascript">
+    $('.btn-toggle').click(function () {
+        $(this).find('.btn').toggleClass('active');
+
+        if ($(this).find('.btn-primary').size() > 0) {
+            $(this).find('.btn').toggleClass('btn-primary');
+        }
+        if ($(this).find('.btn-danger').size() > 0) {
+            $(this).find('.btn').toggleClass('btn-danger');
+        }
+        if ($(this).find('.btn-success').size() > 0) {
+            $(this).find('.btn').toggleClass('btn-success');
+        }
+        if ($(this).find('.btn-info').size() > 0) {
+            $(this).find('.btn').toggleClass('btn-info');
+        }
+
+        $(this).find('.btn').toggleClass('btn-default');
+
+    });
+</script>
+
+<script type="text/javascript">
+    function generateStatement() {
+        var fd = new FormData();
+        fd.append("clientID", "1007");
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("load", function (evt) { GenerateComplete(evt); }, false);
+        xhr.addEventListener("error", function (evt) { GenerateFailed(evt); }, false);
+        xhr.addEventListener("abort", function (evt) { GenerateCanceled(evt); }, false);
+        xhr.open("POST", "../GenerateImpactStatement", true);
+        xhr.send(fd);
+        $('#waitingForSummary').modal('show');
+    }
+
+    function GenerateComplete(evt) {
+        $('#impactStatementLastGenerated').remove();
+        $('#waitingForSummary').modal('hide');
+        $("#impactStatementNotPresent").attr("hidden", true);
+        $("#impactStatementPresent").attr("hidden", false);
+    }
+
+    function GenerateFailed(evt) {
+        $('#waitingForSummary').modal('hide');
+        alert("There was an error attempting to create the file.");
+    }
+
+    function GenerateCanceled(evt) {
+        $('#waitingForSummary').modal('hide');
+        alert("Canceled.");
+    }
+
+    function UploadFile() {
+        var file = document.getElementById('etlfileToUpload').files[0];
+        var fileName = file.name;
+        var fd = new FormData();
+        fd.append("fileData", file);
+        fd.append("clientID", "1007");
+        var xhr = new XMLHttpRequest();
+        xhr.upload.addEventListener("progress", function (evt) { UploadProgress(evt); }, false);
+        xhr.addEventListener("load", function (evt) { UploadComplete(evt); }, false);
+        xhr.addEventListener("error", function (evt) { UploadFailed(evt); }, false);
+        xhr.addEventListener("abort", function (evt) { UploadCanceled(evt); }, false);
+        xhr.open("POST", "../EditClientPhoto", true);
+        xhr.send(fd);
+    }
+
+    function UploadProgress(evt) {
+        if (evt.lengthComputable) {
+            var percentComplete = Math.round(evt.loaded * 100 / evt.total);
+            $("#uploading").text(percentComplete + "% ");
+        }
+    }
+
+    function UploadComplete(evt) {
+        if (evt.target.status == 200)
+            alert(evt.target.responseText);
+        else {
+            alert("Error Uploading File");
+        }
+    }
+
+    function UploadFailed(evt) {
+        alert("There was an error attempting to upload the file.");
+    }
+
+    function UploadCanceled(evt) {
+        alert("The upload has been canceled by the user or the browser dropped the connection.");
+    }
+
+    function archive(transactionid, newval) {
+        var fd = new FormData();
+        fd.append("transactionID", transactionid);
+        fd.append("archived", newval);
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("load", function (evt) { ArchiveComplete(evt, newval); }, false);
+        xhr.addEventListener("error", function (evt) { ArchiveFailed(evt); }, false);
+        xhr.addEventListener("abort", function (evt) { ArchiveCanceled(evt); }, false);
+        xhr.open("POST", "../ArchiveTransaction", true);
+        xhr.send(fd);
+    }
+
+    function ArchiveComplete(evt, newval) {
+        if (evt.target.status == 200) {
+            // we return the transaction id
+            var row = $("#" + evt.target.responseText).remove().clone();
+            var js = "archive(" + evt.target.responseText + ", " + (1 - newval) + ")";
+            var newclick = new Function(js);
+
+            if (newval == 1) {
+                row.find(".btn").text(row.find(".btn").text().replace("Archive", "Unarchive"));
+                row.find(".btn").find("a").attr('onclick', '').click(newclick);
+                $("#oldtransactionstable").append(row);
+            } else {
+                row.find(".btn").text(row.find(".btn").text().replace("Unarchive", "Archive"));
+                row.find(".btn").find("a").attr('onclick', '').click(newclick);
+                $("#transactionstable").append(row);
+            }
+        } else {
+            alert("Error Archiving Transaction");
+        }
+    }
+
+    function ArchiveFailed(evt) {
+        alert("There was an error attempting to archive the file.");
+    }
+
+    function ArchiveCanceled(evt) {
+        alert("There was an error attempting to archive the file.");
+    }
+
+    function emailImpactStatement() {
+        var fd = new FormData();
+        fd.append("message", jQuery("#impactsummarymessage").val());
+        fd.append("clientID", "1007");
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("load", function (evt) { EmailComplete(evt, "client+dwight@impacttrader.com"); }, false);
+        xhr.addEventListener("error", function (evt) { EmailFailed(evt); }, false);
+        xhr.addEventListener("abort", function (evt) { EmailCanceled(evt); }, false);
+        xhr.open("POST", "../EmailImpactPortfolioToClient", true);
+        xhr.send(fd);
+    }
+
+    function emailInvitation() {
+        var fd = new FormData();
+        fd.append("message", jQuery("#invitationmessage").val());
+        fd.append("clientID", "1007");
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("load", function (evt) { InviteEmailComplete(evt, "client+dwight@impacttrader.com"); }, false);
+        xhr.addEventListener("error", function (evt) { EmailFailed(evt); }, false);
+        xhr.addEventListener("abort", function (evt) { EmailCanceled(evt); }, false);
+        xhr.open("POST", "../EmailWelcomeToClient", true);
+        xhr.send(fd);
+    }
+
+    $.fn.gotoAnchor = function (anchor) {
+        location.href = this.selector;
+    }
+    
+    function InviteEmailComplete(evt, email) {
+        $('#confirmInvitationSent').modal('show');
+    }
+
+    function EmailComplete(evt, email) {
+        $('#confirmStatementSent').modal('show');
+    }
+
+    function EmailFailed(evt) {
+        alert("There was an error attempting to send the email.");
+    }
+
+    function EmailCanceled(evt) {
+        alert("There was an error attempting to send the email.");
+    }
+
+</script>
+<div class="container">
+    <!--Div that will hold the pie chart-->
+    <div class="col-xs-6" id="piechart_3d" style="width: 520px; height: 300px;"></div>
+    <div class="col-xs-6" id="allocationChart_div" style="width: 520px; height: 300px"></div>
+</div>
+
+<!-- PORTFOLIO TABLE -->
+
+<div class="container">
+        <div class="col-xs-3">
+            <h2><span class="glyphicon glyphicon-globe"></span>&nbsp Impact Portfolio</h2>
+        </div>
+        <div class="scrambled">
+            <a class="btn btn-primary" style="margin-top:20px;margin-left:20px"><span class="glyphicon glyphicon-plus"></span>&nbsp Manually Add Impact Investment</a>
+        </div>
+        <div class="eggs col-xs-12" style="margin-top:50px">
+            <div class="well">
+               
+
+                    <h3 style="margin-bottom:30px"><span class="glyphicon glyphicon-plus"></span>&nbsp Manually Add Impact Investment</h3>
+
+                   
+                    <form class="form-horizontal" role="form">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label">Offering Name</label>
+                                    <div class="col-sm-8">
+                                    <div class="btn-group">
+                                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        Select Impact Investment <span class="caret"></span>
+                                      </button>
+                                      <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Calvert Community Investment Note</a></li>
+                                        <li><a href="#">Accion Fund</a></li>
+                                        <li><a href="#">Vermont Community Loan Fund</a></li>
+                                      </ul>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label">Purchase Date</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" placeholder="Purchase Date">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label">Amount</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" placeholder="Amount">
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        <div class="row">
+                            <div class="container">
+                                <button style="margin-top:15px;width:250px;margin-left:40%" class="btn btn-success" type="submit"><span class="glyphicon glyphicon-plus"></span>&nbsp Save</button>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    <table class="table table-hover table-responsive table-condensed table-bordered">
+        <thead>
+            <tr>
+                <th>Offering Name</th>
+                <th>Purchase Date</th>
+                <th>Amount</th>
+                <th>Impact Focus</th>
+                <th>Impact Geography</th>
+                <th>Vehicle</th>
+                <th>Transaction Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="transactionstable">
+                <tr id="1484">
+                    <td><a>Maple Bay Asset Management</a></td>
+                    <td>1/25/2014 12:00:00 AM</td>
+                    <td>$1234.00</td>
+                    <td>
+                        <ul style="padding-left:15px">
+                                <li>Microloans</li>
+                        </ul>
+                    </td>
+                    <td>United States</td>
+                    <td>Separately Managed Account</td>
+                    <td>
+
+                        <span class="label label-warning">Pending</span>
+                    </td>
+                    <td><a class="btn btn-primary btn-small" onclick="archive(1484, 1)"><span class="glyphicon glyphicon-folder-open"></span> &nbsp Archive</a></td>
+                </tr>
+                <tr id="1489">
+                    <td><a>Maple Bay Asset Management</a></td>
+                    <td>1/25/2014 12:00:00 AM</td>
+                    <td>$2322.00</td>
+                    <td>
+                        <ul style="padding-left:15px">
+                                <li>Microloans</li>
+                        </ul>
+                    </td>
+                    <td>United States</td>
+                    <td>Separately Managed Account</td>
+                    <td>
+
+                        <span class="label label-warning">Pending</span>
+                    </td>
+                    <td><a class="btn btn-primary btn-small" onclick="archive(1489, 1)"><span class="glyphicon glyphicon-folder-open"></span> &nbsp Archive</a></td>
+                </tr>
+                <tr id="1505">
+                    <td><a>Maple Bay Asset Management</a></td>
+                    <td>1/27/2014 12:00:00 AM</td>
+                    <td>$4433.00</td>
+                    <td>
+                        <ul style="padding-left:15px">
+                                <li>Microloans</li>
+                        </ul>
+                    </td>
+                    <td>United States</td>
+                    <td>Separately Managed Account</td>
+                    <td>
+
+                        <span class="label label-warning">Pending</span>
+                    </td>
+                    <td><a class="btn btn-primary btn-small" onclick="archive(1505, 1)"><span class="glyphicon glyphicon-folder-open"></span> &nbsp Archive</a></td>
+                </tr>
+                <tr id="1509">
+                    <td><a>Maple Bay Asset Management</a></td>
+                    <td>1/27/2014 12:00:00 AM</td>
+                    <td>$1223.00</td>
+                    <td>
+                        <ul style="padding-left:15px">
+                                <li>Microloans</li>
+                        </ul>
+                    </td>
+                    <td>United States</td>
+                    <td>Separately Managed Account</td>
+                    <td>
+
+                        <span class="label label-warning">Pending</span>
+                    </td>
+                    <td><a class="btn btn-primary btn-small" onclick="archive(1509, 1)"><span class="glyphicon glyphicon-folder-open"></span> &nbsp Archive</a></td>
+                </tr>
+                <tr id="3800">
+                    <td><a>India Impact Fund</a></td>
+                    <td>3/11/2014 12:00:00 AM</td>
+                    <td>$2000.00</td>
+                    <td>
+                        <ul style="padding-left:15px">
+                                <li>Gender Equality</li>
+                        </ul>
+                    </td>
+                    <td>India</td>
+                    <td>Note</td>
+                    <td>
+
+                        <span class="label label-warning">Pending</span>
+                    </td>
+                    <td><a class="btn btn-primary btn-small" onclick="archive(3800, 1)"><span class="glyphicon glyphicon-folder-open"></span> &nbsp Archive</a></td>
+                </tr>
+                <tr id="5810">
+                    <td><a>Community Investment Note</a></td>
+                    <td>3/26/2014 12:00:00 AM</td>
+                    <td>$10000.00</td>
+                    <td>
+                        <ul style="padding-left:15px">
+                                <li>Debt Reduction</li>
+                        </ul>
+                    </td>
+                    <td>Vermont</td>
+                    <td>Note</td>
+                    <td>
+
+                        <span class="label label-warning">Pending</span>
+                    </td>
+                    <td><a class="btn btn-primary btn-small" onclick="archive(5810, 1)"><span class="glyphicon glyphicon-folder-open"></span> &nbsp Archive</a></td>
+                </tr>
+                <tr id="6819">
+                    <td><a>Maple Bay Asset Management</a></td>
+                    <td>3/30/2014 12:00:00 AM</td>
+                    <td>$250000.00</td>
+                    <td>
+                        <ul style="padding-left:15px">
+                                <li>Microloans</li>
+                        </ul>
+                    </td>
+                    <td>United States</td>
+                    <td>Separately Managed Account</td>
+                    <td>
+
+                        <span class="label label-warning">Pending</span>
+                    </td>
+                    <td><a class="btn btn-primary btn-small" onclick="archive(6819, 1)"><span class="glyphicon glyphicon-folder-open"></span> &nbsp Archive</a></td>
+                </tr>
+                <tr id="6820">
+                    <td><a>Maple Bay Asset Management</a></td>
+                    <td>3/30/2014 12:00:00 AM</td>
+                    <td>$250000.00</td>
+                    <td>
+                        <ul style="padding-left:15px">
+                                <li>Microloans</li>
+                        </ul>
+                    </td>
+                    <td>United States</td>
+                    <td>Separately Managed Account</td>
+                    <td>
+
+                        <span class="label label-warning">Pending</span>
+                    </td>
+                    <td><a class="btn btn-primary btn-small" onclick="archive(6820, 1)"><span class="glyphicon glyphicon-folder-open"></span> &nbsp Archive</a></td>
+                </tr>
+                <tr id="6821">
+                    <td><a>Maple Bay Asset Management</a></td>
+                    <td>3/30/2014 12:00:00 AM</td>
+                    <td>$250000.00</td>
+                    <td>
+                        <ul style="padding-left:15px">
+                                <li>Microloans</li>
+                        </ul>
+                    </td>
+                    <td>United States</td>
+                    <td>Separately Managed Account</td>
+                    <td>
+
+                        <span class="label label-warning">Pending</span>
+                    </td>
+                    <td><a class="btn btn-primary btn-small" onclick="archive(6821, 1)"><span class="glyphicon glyphicon-folder-open"></span> &nbsp Archive</a></td>
+                </tr>
+                <tr id="6822">
+                    <td><a>Maple Bay Asset Management</a></td>
+                    <td>3/30/2014 12:00:00 AM</td>
+                    <td>$250000.00</td>
+                    <td>
+                        <ul style="padding-left:15px">
+                                <li>Microloans</li>
+                        </ul>
+                    </td>
+                    <td>United States</td>
+                    <td>Separately Managed Account</td>
+                    <td>
+
+                        <span class="label label-warning">Pending</span>
+                    </td>
+                    <td><a class="btn btn-primary btn-small" onclick="archive(6822, 1)"><span class="glyphicon glyphicon-folder-open"></span> &nbsp Archive</a></td>
+                </tr>
+                <tr id="6823">
+                    <td><a>Maple Bay Asset Management</a></td>
+                    <td>3/30/2014 12:00:00 AM</td>
+                    <td>$250000.00</td>
+                    <td>
+                        <ul style="padding-left:15px">
+                                <li>Microloans</li>
+                        </ul>
+                    </td>
+                    <td>United States</td>
+                    <td>Separately Managed Account</td>
+                    <td>
+
+                        <span class="label label-warning">Pending</span>
+                    </td>
+                    <td><a class="btn btn-primary btn-small" onclick="archive(6823, 1)"><span class="glyphicon glyphicon-folder-open"></span> &nbsp Archive</a></td>
+                </tr>
+                <tr id="6824">
+                    <td><a>Maple Bay Asset Management</a></td>
+                    <td>3/31/2014 12:00:00 AM</td>
+                    <td>$250000.00</td>
+                    <td>
+                        <ul style="padding-left:15px">
+                                <li>Microloans</li>
+                        </ul>
+                    </td>
+                    <td>United States</td>
+                    <td>Separately Managed Account</td>
+                    <td>
+
+                        <span class="label label-warning">Pending</span>
+                    </td>
+                    <td><a class="btn btn-primary btn-small" onclick="archive(6824, 1)"><span class="glyphicon glyphicon-folder-open"></span> &nbsp Archive</a></td>
+                </tr>
+
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    <div class="scrambled">
+        <div class="row">
+            <div class="col-xs-12">
+                <a class="btn btn-primary pull-right" style="margin-top:15px;margin-bottom:15px;margin-right:5px"><span class="glyphicon glyphicon-folder-open"></span> &nbsp View Archive</a>
+            </div>
+        </div>
+    </div>
+    <div class="eggs col-xs-12">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 style="margin-top:0px;margin-bottom:0px"><span class="glyphicon glyphicon-folder-open"></span>&nbsp Archived Impact Investments</h2>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover table-responsive table-condensed table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Offering Name</th>
+                                    <th>Purchase Date</th>
+                                    <th>Amount</th>
+                                    <th>Impact Focus</th>
+                                    <th>Impact Geography</th>
+                                    <th>Vehicle</th>
+                                    <th>Transaction Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="oldtransactionstable">
+                                        <tr id="1504">
+                                            <td><a>Community Investment Note</a></td>
+                                            <td>1/27/2014 12:00:00 AM</td>
+                                            <td>$2322.00</td>
+                                            <td>
+                                                <ul style="padding-left:15px">
+                                                        <li>Debt Reduction</li>
+                                                </ul>
+                                            </td>
+                                            <td>Vermont</td>
+                                            <td>Note</td>
+                                            <td>
+
+                                                <span class="label label-warning">Pending</span>
+                                            </td>
+                                            <td><a class="btn btn-primary btn-small" onclick="archive(1504, 0)"><span class="glyphicon glyphicon-folder-open"></span> &nbsp Unarchive</a></td>
+                                        </tr>
+                                        <tr id="4800">
+                                            <td><a>China Impact Fund</a></td>
+                                            <td>1/27/2014 12:00:00 AM</td>
+                                            <td>$2322.00</td>
+                                            <td>
+                                                <ul style="padding-left:15px">
+                                                        <li>Water and Sanitation</li>
+                                                </ul>
+                                            </td>
+                                            <td>China</td>
+                                            <td>China Impact Fund</td>
+                                            <td>
+
+                                                <span class="label label-warning">Pending</span>
+                                            </td>
+                                            <td><a class="btn btn-primary btn-small" onclick="archive(4800, 0)"><span class="glyphicon glyphicon-folder-open"></span> &nbsp Unarchive</a></td>
+                                        </tr>
+                                        <tr id="4801">
+                                            <td><a>Tugende Driven Fund</a></td>
+                                            <td>1/27/2014 12:00:00 AM</td>
+                                            <td>$2322.00</td>
+                                            <td>
+                                                <ul style="padding-left:15px">
+                                                        <li>Transportation</li>
+                                                </ul>
+                                            </td>
+                                            <td>Uganda</td>
+                                            <td>Note</td>
+                                            <td>
+
+                                                <span class="label label-warning">Pending</span>
+                                            </td>
+                                            <td><a class="btn btn-primary btn-small" onclick="archive(4801, 0)"><span class="glyphicon glyphicon-folder-open"></span> &nbsp Unarchive</a></td>
+                                        </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW CLIENT DETAILS -->
+    <!-- CLIENT DETAILS -->
+    <div class="container">
+        <div class="col-xs-3 pull-left">
+            <h2><span class="glyphicon glyphicon-th-list"></span> Client Info</h2>
+        </div>
+        <div class="scrambled">
+            <a class="btn btn-primary" style="margin-top:20px"><span class="glyphicon glyphicon-pencil"></span>&nbsp Edit Client Info</a>
+        </div>
+        <div class="eggs col-xs-12" style="margin-top:50px">
+            <div class="well">
+<form action="/Home/EditClient?model=System.Data.Entity.DynamicProxies.Client_6200D9602DE417B88C7478AD3110922DF2B025580AB39FBB6E83AD6EE0D08C2A" class="form-horizontal" method="post"><input name="__RequestVerificationToken" type="hidden" value="SSS_MHg_us59WxdM80XKCEz2q86S_2dsGb05c5733V__KBMYoePVf7ypuiEq0b9nLVwtkFfaP7pcrcMwFnZqgAnvwPJMk85UB7KWzOFD2XexFDlQmHC6k4yjHgy1KGPSr9on7uBeM1rS4U3Jsr8mqQ2" />                    <h3 style="margin-bottom:30px"><span class="glyphicon glyphicon-pencil"></span>&nbsp Edit Client Info</h3>
+<input data-val="true" data-val-number="The field ClientID must be a number." data-val-required="The ClientID field is required." id="ClientID" name="ClientID" type="hidden" value="1007" />                    <form class="form-horizontal" role="form">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label"><label for="FirstName">First Name</label></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" data-val="true" data-val-length="The field First Name must be a string with a maximum length of 100." data-val-length-max="100" data-val-required="A First Name is required" id="FirstName" name="FirstName" type="text" value="Dwight" />
+                                        <span class="field-validation-valid" data-valmsg-for="FirstName" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label"><label for="MiddleName">Middle Name</label></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" data-val="true" data-val-length="The field Middle Name must be a string with a maximum length of 50." data-val-length-max="50" data-val-required="A Middle Name is required" id="MiddleName" name="MiddleName" type="text" value="W" />
+                                        <span class="field-validation-valid" data-valmsg-for="MiddleName" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label"><label for="LastName">Last Name</label></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" data-val="true" data-val-length="The field Last Name must be a string with a maximum length of 100." data-val-length-max="100" data-val-required="A Last Name is required" id="LastName" name="LastName" type="text" value="Schrute" />
+                                        <span class="field-validation-valid" data-valmsg-for="LastName" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label"><label for="FullName">FullName</label></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" id="FullName" name="FullName" type="text" value="Dwight Schrute" />
+                                        <span class="field-validation-valid" data-valmsg-for="FullName" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label">Registration</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" data-val="true" data-val-length="The field Account Legal Registration must be a string with a maximum length of 256." data-val-length-max="256" data-val-required="A Complete Legal Registration is required" id="RegistrationL1" name="RegistrationL1" type="text" value="Millennium Trust FBO " />
+                                        <span class="field-validation-valid" data-valmsg-for="RegistrationL1" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label">Geographic Interests</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" id="GeographicInterests" name="GeographicInterests" type="text" value="Africa, US" />
+                                        <span class="field-validation-valid" data-valmsg-for="GeographicInterests" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label">Impact Interests</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" id="ImpactInterests" name="ImpactInterests" type="text" value="Microfinance, Water" />
+                                        <span class="field-validation-valid" data-valmsg-for="ImpactInterests" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label"><label for="Email">Email</label></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" data-val="true" data-val-length="The field Email must be a string with a maximum length of 100." data-val-length-max="100" data-val-required="An Email Address is required" id="Email" name="Email" type="text" value="client+dwight@impacttrader.com" />
+                                        <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label"><label for="Address">Address</label></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" data-val="true" data-val-length="The field Address must be a string with a maximum length of 100." data-val-length-max="100" data-val-required="An Address is required" id="Address" name="Address" type="text" value="1035 Wild St" />
+                                        <span class="field-validation-valid" data-valmsg-for="Address" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label"><label for="City">City</label></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" data-val="true" data-val-length="The field City must be a string with a maximum length of 100." data-val-length-max="100" data-val-required="A City is required" id="City" name="City" type="text" value="Bozeman" />
+                                        <span class="field-validation-valid" data-valmsg-for="City" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label"><label for="State">State</label></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" data-val="true" data-val-length="The field State must be a string with a maximum length of 2." data-val-length-max="2" data-val-required="A State is required" id="State" name="State" type="text" value="MT" />
+                                        <span class="field-validation-valid" data-valmsg-for="State" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label"><label for="ZipCode">Zip Code</label></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" data-val="true" data-val-length="The field Zip Code must be a string with a maximum length of 10." data-val-length-max="10" data-val-required="A Zip Code is required" id="ZipCode" name="ZipCode" type="text" value="92031" />
+                                        <span class="field-validation-valid" data-valmsg-for="ZipCode" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label"><label for="DOB">Date of Birth</label></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" data-val="true" data-val-date="The field Date of Birth must be a date." data-val-required="A Date of Birth is required" id="DOB" name="DOB" type="text" value="1/1/2013 12:00:00 AM" />
+                                        <span class="field-validation-valid" data-valmsg-for="DOB" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label"><label for="HPhone">Phone Number</label></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" data-val="true" data-val-length="The field Phone Number must be a string with a maximum length of 100." data-val-length-max="100" data-val-required="A Phone Number is required" id="HPhone" name="HPhone" type="text" value="6568834343" />
+                                        <span class="field-validation-valid" data-valmsg-for="HPhone" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label"><label for="SSN">SSN/TIN/EIN</label></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" data-val="true" data-val-length="The field SSN/TIN/EIN must be a string with a maximum length of 9." data-val-length-max="9" data-val-required="A Social Security Number is required" id="SSN" name="SSN" type="text" value="343222332" />
+                                        <span class="field-validation-valid" data-valmsg-for="SSN" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4 control-label"><label for="Employment">Employment</label></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" id="Employment" name="Employment" type="text" value="Employed" />
+                                        <span class="field-validation-valid" data-valmsg-for="Employment" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="One" class="col-sm-4"><button style="" class="btn btn-primary" type="button" onclick="UploadFile()"><span class="glyphicon glyphicon-picture"></span>&nbsp Upload New Image</button></label>
+                                    <div class="col-sm-8">
+                                        <input type="file" name="etlfileToUpload" id="etlfileToUpload" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="container">
+                                <button style="margin-top:15px;width:150px;margin-left:40%" class="btn btn-success" type="submit"><span class="glyphicon glyphicon-ok"></span>&nbsp Save</button>
+                            </div>
+                        </div>
+                    </form>
+</form>            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <table class="table table-hover table-responsive table-condensed">
+                    <tbody>
+                        <tr>
+                            <td><strong>Name</strong></td>
+                            <td>Dwight W Schrute</td>
+                            <td hidden="hidden"><a>Edit</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Address</strong></td>
+                            <td>
+                                1035 Wild St
+                                <br />Bozeman, MT 92031
+                            </td>
+                            <td hidden="hidden"><a>Edit</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Email</strong></td>
+                            <td><a href="mailto:client+dwight@impacttrader.com"><a href="mailto:client+dwight@impacttrader.com">client+dwight@impacttrader.com</a></a></td>
+                            <td hidden="hidden"><a>Edit</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Primary Phone</strong></td>
+                            <td>6568834343</td>
+                            <td hidden="hidden"><a>Edit</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Date of Birth</strong></td>
+                            <td>1/1/2013</td>
+                            <td hidden="hidden"><a>Edit</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>SSN or EIN</strong></td>
+                            <td>343222332</td>
+                            <td hidden="hidden"><a>Edit</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Employment Status</strong></td>
+                            <td>Employed</td>
+                            <td hidden="hidden"><a>Edit</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Impact Interests</strong></td>
+                            <td>Microfinance, Water</td>
+                            <td hidden="hidden"><a>Edit</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Geographic Interests</strong></td>
+                            <td>Africa, US</td>
+                            <td hidden="hidden"><a>Edit</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SEND IMPACT STATEMENT MODAL -->
+    <div class="modal fade" id="myModalClient1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title">Email Statement to Client</h2>
+                </div>
+                <div class="modal-body">
+                    <dl class="dl-horizontal">
+                        <dt>Client Email:</dt>
+                        <dd>client+dwight@impacttrader.com</dd>
+                        <dt>Period of Statement:</dt>
+                        <dd>Q1 2014</dd>
+                    </dl>
+                    <div class="form-group textTwo">
+                        <label for="exampleInputPassword1">Personalized message for client:</label>
+                        <textarea rows="6" class="form-control" id="impactsummarymessage" placeholder="Enter personal message for client . . . "></textarea>
+                    </div>
+                    <p>(Quarterly impact statement PDF will be attached to this email)</p>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>&nbsp Cancel</a>
+                    <a class="btn btn-primary" data-dismiss="modal" data-toggle="modal" onclick="emailImpactStatement();" style="margin-left:15px"><span class="glyphicon glyphicon-envelope"></span> &nbsp Send</a>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+
+    <!-- SEND INVITATION/WELCOME MODAL -->
+    <div class="modal fade" id="myModalClient2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title">Email Invitation to Client</h2>
+                </div>
+                <div class="modal-body">
+                    <dl class="dl-horizontal">
+                        <dt>Client Email:</dt>
+                        <dd>client+dwight@impacttrader.com</dd>
+                    </dl>
+                    <div class="form-group textTwo">
+                        <label for="exampleInputPassword1">Personalized message for client:</label>
+                        <textarea rows="6" class="form-control" id="invitationmessage" placeholder="Enter personal message for client . . . "></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>&nbsp Cancel</a>
+                    <a class="btn btn-primary" data-dismiss="modal" data-toggle="modal" onclick="emailInvitation();" style="margin-left:15px"><span class="glyphicon glyphicon-envelope"></span> &nbsp Send</a>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+
+
+    <div class="modal fade" id="waitingForSummary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title">Working...</h2>
+                </div>
+                <div class="modal-body">
+                    Impact Trader is generating your client's Impact Statement.<br />
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                            <span class="sr-only">Impact Trader is generating your client's Impact Statement.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+            <div class="eggs well">
+                <div class="container">
+                    <table class="table table-hover table-responsive table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Offering Name</th>
+                                <th>Amount</th>
+                                <th>Impact Geography</th>
+                                <th>Impact Style</th>
+                                <th>Vehicle Type</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a>Calvert Note</a></td>
+                                <td>$5,000</td>
+                                <td>US</td>
+                                <td>Housing / CDFI</td>
+                                <td>Note</td>
+                                <td><span class="label label-success">Complete</span></td>
+                            </tr>
+                            <tr>
+                                <td><a>Enterprise Impact Note</a></td>
+                                <td>$10,000</td>
+                                <td>US</td>
+                                <td>Housing / CDFI</td>
+                                <td>Note</td>
+                                <td><span class="label label-success">Complete</span></td>
+                            </tr>
+                            <tr>
+                                <td><a>Nature Conservancy Note</a></td>
+                                <td>$5,000</td>
+                                <td>US</td>
+                                <td>Environment/Sustainability</td>
+                                <td>Note</td>
+                                <td><span class="label label-success">Complete</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+
+    <div class="modal fade" id="confirmStatementSent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title">Statement has been sent!</h2>
+                </div>
+                <div class="modal-body">
+                    <h2><span class="glyphicon glyphicon-ok" style="color:green"></span>&nbsp Success!</h2>
+                    <h3>Quarterly Impact Statement has been sent to client.</h3>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>&nbsp Done</a>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+
+    <div class="modal fade" id="confirmInvitationSent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title">Invitation has been sent!</h2>
+                </div>
+                <div class="modal-body">
+                    <h2><span class="glyphicon glyphicon-ok" style="color:green"></span>&nbsp Success!</h2>
+                    <h3>An invitation has been sent to client to join Impact Trader.</h3>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>&nbsp Done</a>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+
+
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", { packages: ["corechart"] });
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Impact Type', 'Dollars'],
+              ['Microloans', 1509212.00],['Debt Reduction', 12322.00],['Gender Equality', 2000.00],['Water and Sanitation', 2322.00],['Transportation', 2322.00],
+            ]);
+
+            var options = {
+                title: 'Impact Focus',
+                is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+        }
+    </script>
+
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+        google.load('visualization', '1', { 'packages': ['geochart'] });
+        google.setOnLoadCallback(drawRegionsMap);
+
+        function drawRegionsMap() {
+            var data = google.visualization.arrayToDataTable([
+              ['Country', 'Investments'],
+              ['United States', 12],['India', 1],['China', 1],['Uganda', 1],
+            ]);
+
+            var options = {
+
+            };
+
+            var chart = new google.visualization.GeoChart(document.getElementById('geoChart_div'));
+            chart.draw(data, options);
+        };
+    </script>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", { packages: ["corechart"] });
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Time', 'Dollars'],
+              ['12/2014', 0],['1/2014', 16178.00],['3/2014', 1523534.00],
+            ]);
+
+            var options = {
+                title: 'Impact Allocation',
+                hAxis: { title: 'Time', titleTextStyle: { color: '#333' } },
+                vAxis: { minValue: 0 }
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('allocationChart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+
+    <script type="text/javascript">
+        function scrollWin() {
+            window.scrollTo(0, 480);
+        }
+    </script>
+
+</div>
+    </div>
+
+    <!-- Site footer -->
+    <div class="container">
+        <div id="footer" style="margin-top: 50px; margin-bottom: 25px;padding-top:15px">
+            <div class="container">
+              <ul class="list-inline">
+                <li style="color:#808080;margin-right:50px">&copy; Impact Trader, Inc. 2014</li>
+                <li id="aboutlink"><a style="color:#808080;text-decoration:none" href="/Home/About">About</a></li>
+                <li id="legallink"><a style="color:#808080;text-decoration:none" href="/Home/Legal">Legal</a></li>
+              </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
